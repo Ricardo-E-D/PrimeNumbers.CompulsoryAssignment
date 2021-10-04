@@ -10,6 +10,7 @@ namespace CompulsoryAssignment
 {
     public class PrimeGenerator
     {
+        // 1) Function implementation using sequential approach 
         // changing this, voids the assignments specified requirements of said method
         public List<long> GetPrimesSequential(long first, long last)
         {
@@ -50,12 +51,14 @@ namespace CompulsoryAssignment
             return primes;
         }
 
+        // 2) Function implementation using parallel approach 
         // changing this, voids the assignments specified requirements of said method
         public List<long> GetPrimesParallel(long first, long last)
         {
             if (first > last) throw new Exception("The starting number is greater than the last");
 
             //TODO: populate the list in order
+            // currently, this does not take race-conditions into account
             var primes = new List<long>();
 
             //TODO: alternative to parsing longs to ints?
